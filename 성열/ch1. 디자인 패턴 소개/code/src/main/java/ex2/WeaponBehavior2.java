@@ -1,8 +1,9 @@
 package ex2;
 
-public class WeaponBehavior1 implements WeaponBehavior {
+public class WeaponBehavior2 implements WeaponBehavior {
+
   @Override
-  public void useWeapon () {
-    System.out.println("1");
+  public void useWeapon() {
+    System.out.println("2");
   }
 }

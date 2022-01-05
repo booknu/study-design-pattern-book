@@ -1,9 +1,9 @@
-package duck.behavior.fly;
+package ex1.duck.behavior.fly;
 
 public class NormalFly implements FlyBehavior {
 
   @Override
-  public void fly () {
+  public void fly() {
     System.out.println("일반적으로 남.");
   }
 }

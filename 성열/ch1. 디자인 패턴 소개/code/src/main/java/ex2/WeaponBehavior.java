@@ -1,2 +1,6 @@
-package ex2;public interface WeaphonBehavior {
+package ex2;
+
+public interface WeaponBehavior {
+
+  void useWeapon();
 }

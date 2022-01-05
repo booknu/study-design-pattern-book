@@ -1,14 +1,14 @@
-package duck.behavior.fly;
+package ex1.duck.behavior.fly;
 
 public interface FlyBehavior {
 
-  void fly ();
+  void fly();
 
-  static FlyBehavior normal () {
+  static FlyBehavior normal() {
     return new NormalFly();
   }
 
-  static FlyBehavior unable () {
+  static FlyBehavior unable() {
     return new UnableToFly();
   }
 }

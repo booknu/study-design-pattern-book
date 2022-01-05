@@ -1,4 +1,5 @@
 package ex2;
 
-public class Queen extends Character {
+public class King extends Character {
+
 }

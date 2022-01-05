@@ -1,18 +1,18 @@
-package duck.behavior.quack;
+package ex1.duck.behavior.quack;
 
 public interface QuackBehavior {
 
-  void quack ();
+  void quack();
 
-  static QuackBehavior normal () {
+  static QuackBehavior normal() {
     return new NormalQuack();
   }
 
-  static QuackBehavior mute () {
+  static QuackBehavior mute() {
     return new MuteQuack();
   }
 
-  static QuackBehavior squeak () {
+  static QuackBehavior squeak() {
     return new Squeak();
   }
 }

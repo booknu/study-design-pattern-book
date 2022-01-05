@@ -1,9 +1,9 @@
-package duck.behavior.quack;
+package ex1.duck.behavior.quack;
 
 public class NormalQuack implements QuackBehavior {
 
   @Override
-  public void quack () {
+  public void quack() {
     System.out.println("꽥꽥");
   }
 }
