@@ -46,3 +46,5 @@ rebel.xml
 .gradle
 /build/
 .gradletasknamecache
+
+.vscode/settings.json
