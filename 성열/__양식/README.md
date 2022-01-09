@@ -1,8 +1,2 @@
-[TOC]
-
-# 내용 정리
-
-
-
-# 어디에 적용하면 좋을까?
+[Notion](https://booknu.notion.site/ce56a63bbee349cda175643af7c36928)
 
