@@ -1,4 +1,9 @@
-# 내용 정리
+# 전략 패턴
+- 알고리즘군을 정의하고 각각을 캡슐화하여 바꿔쓸수 있게 만든다.
+- 이를 이용하면 알고리즘을 활용하는 클라이언트와 독립적으로 알고리즘을 변경할 수 있다.
+
+<img src="strategy-pattern-class-diagram.png">
+
 
 ## 문제 상황
 1. `Duck`이라는 추상 클래스를 확장하여 여러 서브클래스 (`MallardDuck`, `RedheadDuck`, `ToyDuck`)를 만들었다. 
