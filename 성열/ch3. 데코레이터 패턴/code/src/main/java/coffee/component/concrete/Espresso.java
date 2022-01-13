@@ -1,9 +1,6 @@
-package component.concrete;
+package coffee.component.concrete;
 
-import component.Beverage;
-
-import java.util.Collections;
-import java.util.List;
+import coffee.component.Beverage;
 
 public class Espresso extends Beverage {
 	public Espresso() {

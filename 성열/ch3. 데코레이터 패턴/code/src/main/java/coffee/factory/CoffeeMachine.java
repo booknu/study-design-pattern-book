@@ -1,10 +1,10 @@
-package factory;
+package coffee.factory;
 
-import component.Beverage;
-import component.concrete.Espresso;
-import component.concrete.HouseBlend;
-import component.types.BeverageSize;
-import decorator.concrete.*;
+import coffee.component.Beverage;
+import coffee.component.concrete.Espresso;
+import coffee.component.concrete.HouseBlend;
+import coffee.component.types.BeverageSize;
+import coffee.decorator.concrete.*;
 
 public class CoffeeMachine {
 	private Beverage beverage;

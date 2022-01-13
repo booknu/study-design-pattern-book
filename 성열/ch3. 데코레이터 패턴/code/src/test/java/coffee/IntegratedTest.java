@@ -1,9 +1,11 @@
-import component.Beverage;
-import component.concrete.Espresso;
-import component.types.BeverageSize;
-import decorator.concrete.Milk;
-import decorator.concrete.Whip;
-import factory.CoffeeMachine;
+package coffee;
+
+import coffee.component.Beverage;
+import coffee.component.concrete.Espresso;
+import coffee.component.types.BeverageSize;
+import coffee.decorator.concrete.Milk;
+import coffee.decorator.concrete.Whip;
+import coffee.factory.CoffeeMachine;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

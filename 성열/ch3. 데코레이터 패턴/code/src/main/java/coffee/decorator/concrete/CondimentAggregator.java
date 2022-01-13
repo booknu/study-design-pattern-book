@@ -1,7 +1,7 @@
-package decorator.concrete;
+package coffee.decorator.concrete;
 
-import component.Beverage;
-import decorator.CondimentDecorator;
+import coffee.component.Beverage;
+import coffee.decorator.CondimentDecorator;
 
 import java.util.List;
 import java.util.function.Function;

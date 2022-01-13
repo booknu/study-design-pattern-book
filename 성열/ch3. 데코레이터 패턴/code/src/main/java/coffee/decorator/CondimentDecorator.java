@@ -1,6 +1,6 @@
-package decorator;
+package coffee.decorator;
 
-import component.Beverage;
+import coffee.component.Beverage;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

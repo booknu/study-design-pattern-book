@@ -1,6 +1,6 @@
-package component;
+package coffee.component;
 
-import component.types.BeverageSize;
+import coffee.component.types.BeverageSize;
 import lombok.Getter;
 import lombok.Setter;
 

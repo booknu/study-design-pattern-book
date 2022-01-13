@@ -1,6 +1,6 @@
-package component.concrete;
+package coffee.component.concrete;
 
-import component.Beverage;
+import coffee.component.Beverage;
 
 public class HouseBlend extends Beverage {
 	public HouseBlend() {

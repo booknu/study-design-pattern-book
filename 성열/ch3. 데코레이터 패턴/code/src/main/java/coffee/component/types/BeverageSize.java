@@ -1,4 +1,4 @@
-package component.types;
+package coffee.component.types;
 
 
 import lombok.AllArgsConstructor;
