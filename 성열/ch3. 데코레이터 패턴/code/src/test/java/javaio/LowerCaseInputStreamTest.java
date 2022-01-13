@@ -14,10 +14,12 @@ public class LowerCaseInputStreamTest {
 	@Test
 	void 소문자_stream_테스트() {
 		String target = "ABCDEFG abCdEfG AaAaAAAaA CcCcCCCcC";
+
 		InputStream in = new LowerCaseInputStream(
 				new ByteArrayInputStream(target.getBytes(StandardCharsets.UTF_8)));
 
 		Scanner sc = new Scanner(in);
+
 		assertEquals(sc.nextLine(), target.toLowerCase(Locale.ROOT));
 	}
 }
