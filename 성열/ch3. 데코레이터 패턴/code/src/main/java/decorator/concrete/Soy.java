@@ -2,13 +2,13 @@ package decorator.concrete;
 
 import component.Beverage;
 import decorator.CondimentDecorator;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 public class Soy extends CondimentDecorator {
-	private final Beverage beverage;
+	public Soy(Beverage beverage) {
+		super(beverage);
+	}
 
 	@Override
 	public double cost() {

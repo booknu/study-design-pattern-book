@@ -2,13 +2,13 @@ package decorator.concrete;
 
 import component.Beverage;
 import decorator.CondimentDecorator;
-import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 public class Whip extends CondimentDecorator {
-	private final Beverage beverage;
+	public Whip(Beverage beverage) {
+		super(beverage);
+	}
 
 	@Override
 	public double cost() {
