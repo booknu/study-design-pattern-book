@@ -3,6 +3,7 @@ package factory;
 import component.Beverage;
 import component.concrete.Espresso;
 import component.concrete.HouseBlend;
+import component.types.BeverageSize;
 import decorator.concrete.*;
 
 public class CoffeeMachine {
@@ -37,6 +38,11 @@ public class CoffeeMachine {
 
 	public CoffeeMachine addWhip() {
 		beverage = new Whip(beverage);
+		return this;
+	}
+
+	public CoffeeMachine size(BeverageSize size) {
+		beverage.setSize(size);
 		return this;
 	}
 

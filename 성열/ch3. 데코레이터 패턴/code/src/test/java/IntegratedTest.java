@@ -1,5 +1,6 @@
 import component.Beverage;
 import component.concrete.Espresso;
+import component.types.BeverageSize;
 import decorator.concrete.Milk;
 import decorator.concrete.Whip;
 import factory.CoffeeMachine;
@@ -33,7 +34,7 @@ public class IntegratedTest {
 				.make();
 
 		assertEquals(b.getIngredients(), List.of("하우스 블렌드", "우유", "모카", "두유", "휘핑"));
-		assertEquals(b.cost(), 200.1111, EPS);
+		assertEquals(b.cost(), 201.1111, EPS);
 	}
 
 	@Test
@@ -49,5 +50,15 @@ public class IntegratedTest {
 				.make();
 
 		assertThat(b.getIngredients()).hasSameElementsAs(List.of("에스프레소", "휘핑", "우유 2", "모카 3"));
+	}
+
+	@Test
+	void 사이즈_바꿔보기() {
+		Beverage b = CoffeeMachine.espresso()
+				.addSoy()
+				.size(BeverageSize.VENTI)
+				.make();
+
+		assertEquals(b.cost(), 103.001, EPS);
 	}
 }
