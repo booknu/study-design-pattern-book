@@ -7,6 +7,8 @@ import basic.receiver.Tv;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -19,6 +21,7 @@ public class ClientTest {
 	/** receiver */
 	private Door door;
 	private Tv tv;
+	private AtomicInteger integer;
 
 	/** command & receiver */
 	private SmartCommand smartCommand;
@@ -29,6 +32,7 @@ public class ClientTest {
 
 		door = new Door();
 		tv = new Tv();
+		integer = new AtomicInteger(0);
 		smartCommand = new SmartCommand();
 
 		TvOnCommand tvOnCommand = new TvOnCommand(tv);
@@ -42,7 +46,8 @@ public class ClientTest {
 				new MetaCommand(doorOpenCommand, tvOnCommand),
 				new MetaCommand(doorCloseCommand, tvOffCommand));
 		remoteControl.setCommand(3, smartCommand, smartCommand);
-		// index 4 는 자동으로 NoCommand
+		// 익명 클래스와 같은 형태로도 사용 가능 (보통 Thread 를 이런 식으로 사용)
+		remoteControl.setCommand(4, BasicCommand.doNothing(), () -> integer.addAndGet(1));
 	}
 
 	@Test
@@ -77,6 +82,8 @@ public class ClientTest {
 
 		// no command
 		remoteControl.pushOnButton(4);
+		assertEquals(0, integer.get());
 		remoteControl.pushOffButton(4);
+		assertEquals(1, integer.get());
 	}
 }
