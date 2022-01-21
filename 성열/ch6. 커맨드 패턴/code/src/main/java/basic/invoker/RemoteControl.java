@@ -1,7 +1,6 @@
 package basic.invoker;
 
 import basic.command.BasicCommand;
-import basic.command.NoCommand;
 import lombok.Getter;
 
 import java.util.List;
@@ -9,8 +8,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RemoteControl {
-	private static final BasicCommand NO_COMMAND = new NoCommand();
-
 	@Getter
 	private final int numberOfCommands;
 	private final List<BasicCommand> onCommands;
@@ -19,11 +16,11 @@ public class RemoteControl {
 	public RemoteControl(int numberOfCommands) {
 		this.numberOfCommands = numberOfCommands;
 
-		onCommands = Stream.generate(() -> NO_COMMAND)
+		onCommands = Stream.generate(BasicCommand::doNothing)
 				.limit(numberOfCommands)
 				.collect(Collectors.toList());
 
-		offCommands = Stream.generate(() -> NO_COMMAND)
+		offCommands = Stream.generate(BasicCommand::doNothing)
 				.limit(numberOfCommands)
 				.collect(Collectors.toList());
 	}
@@ -35,7 +32,7 @@ public class RemoteControl {
 
 	private BasicCommand convertToProperCommand(BasicCommand command) {
 		if (command == null) {
-			return NO_COMMAND;
+			return BasicCommand.doNothing();
 		}
 
 		return command;

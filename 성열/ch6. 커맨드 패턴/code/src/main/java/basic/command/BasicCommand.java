@@ -5,5 +5,10 @@ package basic.command;
  * Thread 와 비슷하게 실제 행동 함수 하나만 구현하면 됨.
  */
 public interface BasicCommand {
+	BasicCommand DO_NOTHING_COMMAND = new NoCommand();
 	void execute();
+
+	static BasicCommand doNothing() {
+		return DO_NOTHING_COMMAND;
+	}
 }
