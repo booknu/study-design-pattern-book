@@ -3,14 +3,14 @@ package basic.command;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class MetaCommand implements BasicCommand {
+public class MacroCommand implements BasicCommand {
 	private final BasicCommand[] commands;
 
-	public MetaCommand(BasicCommand... commands) {
+	public MacroCommand(BasicCommand... commands) {
 		this.commands = commands;
 	}
 
-	public MetaCommand(Collection<BasicCommand> commands) {
+	public MacroCommand(Collection<BasicCommand> commands) {
 		this(commands.toArray(BasicCommand[]::new));
 	}
 

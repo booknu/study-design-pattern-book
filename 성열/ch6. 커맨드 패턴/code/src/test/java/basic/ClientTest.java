@@ -43,8 +43,8 @@ public class ClientTest {
 		remoteControl.setCommand(0, doorOpenCommand, doorCloseCommand);
 		remoteControl.setCommand(1, tvOnCommand, tvOffCommand);
 		remoteControl.setCommand(2,
-				new MetaCommand(doorOpenCommand, tvOnCommand),
-				new MetaCommand(doorCloseCommand, tvOffCommand));
+				new MacroCommand(doorOpenCommand, tvOnCommand),
+				new MacroCommand(doorCloseCommand, tvOffCommand));
 		remoteControl.setCommand(3, smartCommand, smartCommand);
 		// 익명 클래스와 같은 형태로도 사용 가능 (보통 Thread 를 이런 식으로 사용)
 		remoteControl.setCommand(4, BasicCommand.doNothing(), () -> integer.addAndGet(1));
@@ -65,7 +65,7 @@ public class ClientTest {
 		remoteControl.pushOffButton(1);
 		assertFalse(tv.isOn());
 
-		// door & tv meta command
+		// door & tv macro command
 		remoteControl.pushOnButton(2);
 		assertTrue(door.isOpen());
 		assertTrue(tv.isOn());
