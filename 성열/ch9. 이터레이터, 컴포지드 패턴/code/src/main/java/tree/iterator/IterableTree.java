@@ -22,7 +22,7 @@ public interface IterableTree<T> {
 	class TreeIterator<T> implements PeekableIterator<TreeNode<T>> {
 		private final PeekableIterator<TreeNode<T>> eulerTourIterator;
 		private Consumer<TreeIterator<T>> skipInvalid;
- 		private final IterateOrder order;
+		private final IterateOrder order;
 		private Map<TreeNode<T>, Integer> visitCount; // 귀찮아서 그냥 Map 으로 때려박음. 성능 개선하고 싶으면 해당 노드의 첫번쨰/마지막 방문인지 알 수 있도록 구조 변경 필요.
 
 		public TreeIterator(PeekableIterator<TreeNode<T>> eulerTourIterator, IterateOrder order) {
@@ -51,7 +51,7 @@ public interface IterableTree<T> {
 		private void increaseVisitCount(TreeNode<T> node) {
 			visitCount.putIfAbsent(node, 0);
 			visitCount.compute(node, (key, value) -> value + 1);
- 		}
+		}
 
 		@Override
 		public TreeNode<T> peek() {
@@ -96,6 +96,7 @@ public interface IterableTree<T> {
 
 	/**
 	 * Leaf 만 순회하는 iterator
+	 *
 	 * @param <T>
 	 */
 	class LeafIterator<T> implements PeekableIterator<TreeNode<T>> {

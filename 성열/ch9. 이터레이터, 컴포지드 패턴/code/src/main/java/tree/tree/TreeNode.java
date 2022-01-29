@@ -2,26 +2,33 @@ package tree.tree;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import tree.iterator.PeekableIterator;
 import tree.iterator.IterableTree;
+import tree.iterator.PeekableIterator;
 
 import java.util.Iterator;
 
 public interface TreeNode<T> extends Iterable<T>, IterableTree<T> {
 	T getItem();
+
 	void setItem(T newItem);
+
 	int getChildSize();
+
 	default boolean isLeaf() {
 		return getChildSize() == 0;
 	}
 
 	void add(TreeNode<T> node);
+
 	void remove(TreeNode<T> node);
+
 	void remove(int index);
+
 	TreeNode<T> getChildNode(int index);
 
 	/**
 	 * 자식 노드만 순회하는 iterator
+	 *
 	 * @param <T>
 	 */
 	@AllArgsConstructor
@@ -64,6 +71,7 @@ public interface TreeNode<T> extends Iterable<T>, IterableTree<T> {
 
 	/**
 	 * TreeNode iterator 을 Item iterator 로 변환해주는 iterator
+	 *
 	 * @param <T>
 	 */
 	class ItemIterator<T> implements Iterator<T> {

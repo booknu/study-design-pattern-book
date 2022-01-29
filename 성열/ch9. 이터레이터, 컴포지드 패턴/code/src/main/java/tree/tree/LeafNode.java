@@ -6,6 +6,7 @@ import tree.iterator.PeekableIterator;
 
 /**
  * 서브트리를 생성 할 수 없는 노드 객체
+ *
  * @param <T>
  */
 public class LeafNode<T> implements TreeNode<T> {

@@ -1,6 +1,9 @@
 package composite;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,7 +12,7 @@ import java.util.Stack;
 
 /**
  * 하위에 서브트리를 가질 수 있음.
- *
+ * <p>
  * 서브트리 관리와 비즈니스 로직적인 기능까지 동시에 담당하는 클래스.
  */
 @Getter
@@ -56,6 +59,7 @@ public class CompositeObject implements Component {
 	}
 
 	// ---- iterator 기능 외부로 노출 ---- //
+
 	/**
 	 * 책에서 구현한 방식. root 가 순회에 포함되지 않고, 깊이가 깊은 트리인 경우 O(n^2) 시간과 공간이 필요함.
 	 */
@@ -101,5 +105,4 @@ public class CompositeObject implements Component {
 	public Iterator<Component> iterator() {
 		return new CompositeIterator(this.childs.iterator());
 	}
-
 }

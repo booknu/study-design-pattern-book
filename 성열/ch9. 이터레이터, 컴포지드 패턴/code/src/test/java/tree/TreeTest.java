@@ -6,7 +6,6 @@ import tree.iterator.IterableTree;
 import tree.tree.TreeNode;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -18,6 +17,13 @@ public class TreeTest {
 		return ret;
 	}
 
+	/**
+	 * width x depth 완전 트리를 만듬.
+	 *
+	 * @param width
+	 * @param depth
+	 * @return
+	 */
 	private TreeNode<Integer> createCompleteTree(int width, int depth) {
 		int id = 0;
 		TreeNode<Integer> root = TreeNode.create(id++);
@@ -42,12 +48,13 @@ public class TreeTest {
 		return root;
 	}
 
-	private <T> void forEach(Iterator<T> iterator, Consumer<T> action) {
-		while (iterator.hasNext()) {
-			action.accept(iterator.next());
-		}
-	}
-
+	/**
+	 * iterator 를 stream 으로 바꿔줌.
+	 *
+	 * @param iterator
+	 * @param <T>
+	 * @return
+	 */
 	private <T> Stream<T> stream(Iterator<T> iterator) {
 		return StreamSupport.stream(
 				Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED),

@@ -54,7 +54,7 @@ public class NonLeafTreeNode<T> implements TreeNode<T> {
 			}
 
 			// 현재 순회 중인 노드의 다음 자식이 있으면 peek
-			assert(nodeIteratorStack.peek().hasNext());
+			assert (nodeIteratorStack.peek().hasNext());
 			return nodeIteratorStack.peek().peek();
 		}
 
