@@ -1,0 +1,1 @@
+[Notion 참조](https://ppkk0906.notion.site/10-State-Pattern-357b092c1eb943be9d2e1b7e55eb0b90)
